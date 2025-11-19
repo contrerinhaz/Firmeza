@@ -1,0 +1,47 @@
+@model Firmeza.Web.Models.Entities.User
+
+@{
+    ViewData["Title"] = "Detalles del Usuario";
+}
+
+<div class="container py-5">
+
+    <h2 class="fw-bold text-warning mb-4">Detalles del Usuario</h2>
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+
+            <dl class="row">
+                <dt class="col-sm-3 fw-semibold">Nombre</dt>
+                <dd class="col-sm-9">@Model.FullName</dd>
+
+                <dt class="col-sm-3 fw-semibold">Documento</dt>
+                <dd class="col-sm-9">@Model.DocumentNumber</dd>
+
+                <dt class="col-sm-3 fw-semibold">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3 fw-semibold">Teléfono</dt>
+                <dd class="col-sm-9">@Model.Phone</dd>
+
+                <dt class="col-sm-3 fw-semibold">Usuario</dt>
+                <dd class="col-sm-9">@Model.UserName</dd>
+
+                <dt class="col-sm-3 fw-semibold">Fecha Registro</dt>
+                <dd class="col-sm-9">@Model.RegisterDate</dd>
+            </dl>
+
+            <div class="d-flex gap-3 mt-4">
+                <a asp-action="Edit" asp-route-id="@Model.Id" 
+                   class="btn btn-outline-warning fw-semibold px-4 rounded-3">
+                    Editar
+                </a>
+
+                <a asp-action="Index" class="btn btn-secondary fw-semibold rounded-3 px-4">
+                    Volver
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

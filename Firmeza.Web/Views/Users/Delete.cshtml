@@ -1,0 +1,44 @@
+@model Firmeza.Web.Models.Entities.User
+
+@{
+    ViewData["Title"] = "Eliminar Usuario";
+}
+
+<div class="container py-5">
+
+    <h2 class="fw-bold text-danger mb-4">Eliminar Usuario</h2>
+
+    <div class="alert alert-danger fw-semibold rounded-3 shadow-sm p-4">
+        ¿Estás seguro de que deseas eliminar este usuario?
+    </div>
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+
+            <dl class="row">
+                <dt class="col-sm-3 fw-semibold">Nombre</dt>
+                <dd class="col-sm-9">@Model.FullName</dd>
+
+                <dt class="col-sm-3 fw-semibold">Documento</dt>
+                <dd class="col-sm-9">@Model.DocumentNumber</dd>
+
+                <dt class="col-sm-3 fw-semibold">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+            </dl>
+
+            <form asp-action="Delete" method="post" class="d-flex gap-3 mt-4">
+                <input type="hidden" asp-for="Id" />
+
+                <button type="submit" class="btn btn-danger fw-semibold rounded-3 px-4">
+                    Confirmar Eliminación
+                </button>
+
+                <a asp-action="Index" class="btn btn-secondary rounded-3 fw-semibold px-4">
+                    Cancelar
+                </a>
+            </form>
+
+        </div>
+    </div>
+
+</div>

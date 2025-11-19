@@ -1,0 +1,34 @@
+@model Firmeza.Web.Models.Entities.Product
+@{
+    ViewData["Title"] = "Eliminar producto";
+}
+
+<div class="container min-vh-100 d-flex align-items-center justify-content-center bg-light">
+    <div class="card shadow-lg border-0 rounded-4 w-100" style="max-width: 600px;">
+        <div class="card-body p-5">
+            <h2 class="fw-bold text-center text-danger mb-3">Eliminar producto</h2>
+            <p class="text-center text-muted mb-4">¿Seguro que deseas eliminar este producto del inventario?</p>
+
+            <div class="bg-white rounded-4 p-4 shadow-sm mb-4">
+                <dl class="row mb-0">
+                    <dt class="col-sm-4 fw-semibold text-secondary">@Html.DisplayNameFor(m => m.Name)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(m => m.Name)</dd>
+                    <dt class="col-sm-4 fw-semibold text-secondary">@Html.DisplayNameFor(m => m.Price)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(m => m.Price)</dd>
+                    <dt class="col-sm-4 fw-semibold text-secondary">@Html.DisplayNameFor(m => m.Quantity)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(m => m.Quantity)</dd>
+                    <dt class="col-sm-4 fw-semibold text-secondary">@Html.DisplayNameFor(m => m.Category)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(m => m.Category)</dd>
+                </dl>
+            </div>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-outline-secondary fw-semibold rounded-3 px-4">Cancelar</a>
+                    <button type="submit" class="btn btn-danger fw-semibold rounded-3 px-4 shadow-sm">Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

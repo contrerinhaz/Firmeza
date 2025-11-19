@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firmeza.Web", "Firmeza.Web\Firmeza.Web.csproj", "{E68809F1-A00C-42BA-82C8-B60A996FC1B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firmeza.Api", "Firmeza.Api\Firmeza.Api.csproj", "{01FB2F30-D1BD-4CBD-B10E-D24907103E29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firmeza.Api", "Firmeza.Api\Firmeza.Api.csproj", "{8211F74E-C958-4063-B886-189BC3121C7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +20,9 @@ Global
 		{E68809F1-A00C-42BA-82C8-B60A996FC1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E68809F1-A00C-42BA-82C8-B60A996FC1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E68809F1-A00C-42BA-82C8-B60A996FC1B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{01FB2F30-D1BD-4CBD-B10E-D24907103E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01FB2F30-D1BD-4CBD-B10E-D24907103E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01FB2F30-D1BD-4CBD-B10E-D24907103E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01FB2F30-D1BD-4CBD-B10E-D24907103E29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8211F74E-C958-4063-B886-189BC3121C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8211F74E-C958-4063-B886-189BC3121C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8211F74E-C958-4063-B886-189BC3121C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8211F74E-C958-4063-B886-189BC3121C7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

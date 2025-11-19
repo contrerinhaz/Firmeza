@@ -1,0 +1,33 @@
+@model Firmeza.Web.Models.Entities.Product
+@{
+    ViewData["Title"] = "Detalles del producto";
+}
+
+<div class="container min-vh-100 d-flex align-items-center justify-content-center bg-light">
+    <div class="card shadow-lg border-0 rounded-4 w-100" style="max-width: 700px;">
+        <div class="card-body p-5">
+            <h2 class="fw-bold text-center text-warning mb-3">Detalles del producto</h2>
+            <p class="text-center text-muted mb-4">Consulta la información completa del artículo.</p>
+
+            <div class="bg-white rounded-4 p-4 shadow-sm mb-4">
+                <dl class="row mb-0">
+                    <dt class="col-sm-4 fw-semibold text-secondary">@Html.DisplayNameFor(m => m.Name)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(m => m.Name)</dd>
+                    <dt class="col-sm-4 fw-semibold text-secondary">@Html.DisplayNameFor(m => m.Price)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(m => m.Price)</dd>
+                    <dt class="col-sm-4 fw-semibold text-secondary">@Html.DisplayNameFor(m => m.Quantity)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(m => m.Quantity)</dd>
+                    <dt class="col-sm-4 fw-semibold text-secondary">@Html.DisplayNameFor(m => m.Category)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(m => m.Category)</dd>
+                    <dt class="col-sm-4 fw-semibold text-secondary">@Html.DisplayNameFor(m => m.CreatedAt)</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(m => m.CreatedAt)</dd>
+                </dl>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-outline-secondary rounded-3 fw-semibold px-4">Volver</a>
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning text-dark fw-semibold rounded-3 px-4 shadow-sm">Editar</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+@model IEnumerable<Firmeza.Web.Models.Entities.User>
+
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-warning mb-0">Administración de Usuarios</h2>
+
+        <a asp-action="Create" class="btn btn-warning text-dark shadow-sm px-4 fw-semibold rounded-3">
+            + Nuevo Usuario
+        </a>
+    </div>
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4 bg-white">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-warning text-dark text-center">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Documento</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Fecha Registro</th>
+                            <th>Usuario</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @if (!Model.Any())
+                        {
+                            <tr>
+                                <td colspan="7" class="text-center text-muted py-4">
+                                    No hay usuarios registrados.
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr class="text-center">
+                                    <td>@item.FullName</td>
+                                    <td>@item.DocumentNumber</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.Phone</td>
+                                    <td>@item.RegisterDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.UserName</td>
+
+                                    <td>
+                                        <div class="d-flex justify-content-center gap-2">
+                                            <a asp-action="Edit" asp-route-id="@item.Id"
+                                               class="btn btn-sm btn-outline-warning text-dark fw-semibold rounded-3">
+                                                Editar
+                                            </a>
+
+                                            <a asp-action="Details" asp-route-id="@item.Id"
+                                               class="btn btn-sm btn-outline-secondary fw-semibold rounded-3">
+                                                Detalles
+                                            </a>
+
+                                            <a asp-action="Delete" asp-route-id="@item.Id"
+                                               class="btn btn-sm btn-outline-danger fw-semibold rounded-3">
+                                                Eliminar
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

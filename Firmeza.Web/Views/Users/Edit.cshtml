@@ -1,0 +1,71 @@
+@model Firmeza.Web.ViewModels.Users.EditUserViewModel
+
+@{
+    ViewData["Title"] = "Editar Usuario";
+}
+
+<div class="container py-5">
+
+    <h2 class="fw-bold text-warning mb-4">Editar Usuario</h2>
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+
+            <form asp-action="Edit" method="post" class="row g-3">
+
+                <input type="hidden" asp-for="Id" />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="col-md-6">
+                    <label asp-for="FullName" class="form-label fw-semibold"></label>
+                    <input asp-for="FullName" class="form-control rounded-3" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="DocumentNumber" class="form-label fw-semibold"></label>
+                    <input asp-for="DocumentNumber" class="form-control rounded-3" />
+                    <span asp-validation-for="DocumentNumber" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="Email" class="form-label fw-semibold"></label>
+                    <input asp-for="Email" class="form-control rounded-3" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="Phone" class="form-label fw-semibold"></label>
+                    <input asp-for="Phone" class="form-control rounded-3" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="UserName" class="form-label fw-semibold"></label>
+                    <input asp-for="UserName" class="form-control rounded-3" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="RegisterDate" class="form-label fw-semibold"></label>
+                    <input asp-for="RegisterDate" class="form-control rounded-3" readonly />
+                </div>
+
+                <div class="col-12 d-flex justify-content-end mt-4">
+                    <button type="submit" class="btn btn-warning text-dark fw-semibold px-4 rounded-3 shadow-sm">
+                        Guardar Cambios
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a asp-action="Index" class="text-decoration-none text-warning fw-semibold">
+            ← Volver a Usuarios
+        </a>
+    </div>
+
+</div>

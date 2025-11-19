@@ -1,0 +1,87 @@
+@model IEnumerable<Firmeza.Web.Models.Entities.Product>
+@{
+    ViewData["Title"] = "Productos";
+}
+
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-warning mb-0">Inventario de Productos</h2>
+
+        <div class="d-flex gap-2">
+            <!-- Botón de carga de Excel -->
+            <form asp-controller="Excel" asp-action="Upload" method="post" enctype="multipart/form-data" id="excelForm">
+                <input type="file" name="file" id="excelInput" class="d-none" accept=".xlsx,.xls" />
+                <button type="button" class="btn btn-outline-warning text-dark fw-semibold rounded-3 px-4" onclick="document.getElementById('excelInput').click()">
+                    Cargar Excel
+                </button>
+            </form>
+
+            <!-- Botón existente de crear nuevo producto -->
+            <a asp-action="Create" class="btn btn-warning text-dark shadow-sm px-4 fw-semibold rounded-3">+ Nuevo</a>
+        </div>
+    </div>
+
+    <!-- Tabla de productos -->
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4 bg-white">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-warning text-dark text-center">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Name)</th>
+                        <th>@Html.DisplayNameFor(model => model.Price) ($)</th>
+                        <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+                        <th>@Html.DisplayNameFor(model => model.Category)</th>
+                        <th>@Html.DisplayNameFor(model => model.CreatedAt)</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="6" class="text-center text-muted py-4">
+                                No hay productos registrados.
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr class="text-center">
+                                <td class="fw-semibold">@Html.DisplayFor(m => item.Name)</td>
+                                <td>@item.Price.ToString("C", new System.Globalization.CultureInfo("es-CO"))</td>
+                                <td>@Html.DisplayFor(m => item.Quantity)</td>
+                                <td>@Html.DisplayFor(m => item.Category)</td>
+                                <td>@Html.DisplayFor(m => item.CreatedAt)</td>
+                                <td>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-warning text-dark fw-semibold rounded-3">Editar</a>
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary fw-semibold rounded-3">Detalles</a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger fw-semibold rounded-3">Eliminar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const excelInput = document.getElementById("excelInput");
+        const excelForm = document.getElementById("excelForm");
+
+        excelInput.addEventListener("change", function () {
+            if (this.files.length > 0) {
+                excelForm.submit();
+            }
+        });
+    </script>
+}
