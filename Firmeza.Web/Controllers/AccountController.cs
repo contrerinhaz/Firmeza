@@ -2,7 +2,6 @@ namespace Firmeza.Web.Controllers;
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Models;
 using Models.Entities;
 

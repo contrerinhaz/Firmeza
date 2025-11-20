@@ -3,8 +3,11 @@ namespace Firmeza.Web.Controllers;
 using Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using Models.Entities;
 using ViewModels.Users;
+
+[Authorize(Policy = "AdminOnly")]
 
 public class UsersController : Controller
 {

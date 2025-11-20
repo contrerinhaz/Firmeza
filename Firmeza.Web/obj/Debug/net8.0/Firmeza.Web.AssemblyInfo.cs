@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Firmeza.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+724d299b8909ff89f60ab65996808d9e7faf4595")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1f149fb33e764c80dad75c9d1ff7086ff311fbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Firmeza.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Firmeza.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
