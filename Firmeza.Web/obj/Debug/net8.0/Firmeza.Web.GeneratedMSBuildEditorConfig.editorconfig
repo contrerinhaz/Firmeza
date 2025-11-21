@@ -62,6 +62,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Sale/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZS9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Sale/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZS9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Sale/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZS9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Sale/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Sale/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/SaleDetails/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZURldGFpbHMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

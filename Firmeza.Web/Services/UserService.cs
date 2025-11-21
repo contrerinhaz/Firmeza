@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Firmeza.Web.Services
 {
+    // Service for managing user accounts and roles
     public class UserService : IUserService
     {
         private readonly IUserRepository _repo;
@@ -37,13 +38,14 @@ namespace Firmeza.Web.Services
 
         public Task<bool> ExistsAsync(string id) => _repo.ExistsAsync(id);
 
+        // Creates a new user with password and assigns a role
         public async Task CreateWithPasswordAsync(User user, string password, string role)
         {
             // Crear usuario con Identity
             var result = await _userManager.CreateAsync(user, password);
 
             if (!result.Succeeded)
-                throw new Exception(string.Join(", ", 
+                throw new Exception(string.Join(", ",
                 result.Errors.Select(e => e.Description)));
 
             // Rol

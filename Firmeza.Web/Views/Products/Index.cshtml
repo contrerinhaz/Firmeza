@@ -16,6 +16,13 @@
                 </button>
             </form>
 
+            <a asp-controller="Excel" asp-action="ExportProducts" class="btn btn-outline-success fw-semibold rounded-3 px-4">
+                Exportar Excel
+            </a>
+            <a asp-controller="Reports" asp-action="ExportProductsPdf" class="btn btn-outline-danger fw-semibold rounded-3 px-4">
+                Exportar PDF
+            </a>
+
             <!-- Botón existente de crear nuevo producto -->
             <a asp-action="Create" class="btn btn-warning text-dark shadow-sm px-4 fw-semibold rounded-3">+ Nuevo</a>
         </div>

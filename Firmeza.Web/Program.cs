@@ -28,7 +28,8 @@ builder.Services.AddDefaultIdentity<User>(options =>
     .AddRoles<IdentityRole>() // Enable Roles
     .AddEntityFrameworkStores<AppDbContext>();
 
-builder.Services.ConfigureApplicationCookie(options => {
+builder.Services.ConfigureApplicationCookie(options =>
+{
     options.LoginPath = "/Identity/Account/Login";
     options.AccessDeniedPath = "/Identity/Account/AccessDenied";
 });
@@ -44,6 +45,9 @@ builder.Services.AddScoped<IExcelService, ExcelService>();
 builder.Services.AddScoped<IExcelRepository, ExcelRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IPdfService, PdfService>();
+builder.Services.AddScoped<ISaleRepository, SaleRepository>();
+builder.Services.AddScoped<ISaleService, SaleService>();
 
 var app = builder.Build();
 

@@ -5,7 +5,8 @@ using Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Models.Entities;
 
-public class ProductRepository : IProductRepository 
+// Repository for direct database access for Products
+public class ProductRepository : IProductRepository
 {
     private readonly AppDbContext _context;
 
@@ -14,30 +15,33 @@ public class ProductRepository : IProductRepository
         _context = context;
     }
 
+    // Retrieves all products ordered by name
     public async Task<List<Product>> GetAll()
     {
         try
         {
-            return await _context.Product.ToListAsync();
+            return await _context.Product.OrderBy(p => p.Name).ToListAsync();
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return [];
         }
     }
-    
+
+    // Finds a product by its ID
     public async Task<Product?> GetById(int id)
     {
         try
         {
             return await _context.Product.FindAsync(id);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return null;
         }
     }
-    
+
+    // Adds a new product to the database
     public async Task<bool> Create(Product product)
     {
         try
@@ -49,8 +53,9 @@ public class ProductRepository : IProductRepository
         catch (Exception ex)
         {
             return false;
-        }    
+        }
     }
+    // Updates an existing product in the database
     public async Task<bool> Update(Product product)
     {
         try
@@ -64,6 +69,7 @@ public class ProductRepository : IProductRepository
             return false;
         }
     }
+    // Removes a product from the database
     public async Task<bool> Delete(int id)
     {
         try
@@ -81,6 +87,6 @@ public class ProductRepository : IProductRepository
         {
             return false;
         }
-        
+
     }
 }

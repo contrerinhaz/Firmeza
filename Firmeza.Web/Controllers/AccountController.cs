@@ -5,9 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 using Models;
 using Models.Entities;
 
+// Controller for handling user authentication (Login/Logout)
 public class AccountController : Controller
 {
-    
+
     private readonly SignInManager<User> _signInManager;
 
     public AccountController(SignInManager<User> signInManager)
@@ -15,9 +16,10 @@ public class AccountController : Controller
         _signInManager = signInManager;
     }
 
+    // Displays the login page
     [HttpGet]
     public IActionResult Login() => View();
-
+    
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(LoginViewModel model)
@@ -38,7 +40,7 @@ public class AccountController : Controller
         ModelState.AddModelError(string.Empty, "Credenciales inválidas.");
         return View(model);
     }
-
+    
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Logout()
