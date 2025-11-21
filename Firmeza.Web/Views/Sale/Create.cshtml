@@ -1,0 +1,244 @@
+@model Firmeza.Web.Models.Entities.Sale
+@{
+    ViewData["Title"] = "Nueva Venta";
+    var products = ViewBag.Products as IEnumerable<Firmeza.Web.Models.Entities.Product>;
+}
+
+<div class="container py-5">
+    <h2 class="fw-bold text-primary mb-4">Registrar Nueva Venta</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form id="saleForm">
+                @Html.AntiForgeryToken()
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Cliente</label>
+                    <select id="UserId" name="UserId" class="form-select" asp-items="ViewBag.UserId">
+                        <option value="">-- Seleccionar Cliente --</option>
+                    </select>
+                </div>
+
+                <h4 class="mb-3">Productos</h4>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <select id="productSelect" class="form-select">
+                            <option value="">-- Seleccionar Producto --</option>
+                            @if (products != null)
+                            {
+                                foreach (var p in products)
+                                {
+                                    <option value="@p.Id" data-price="@p.Price" data-stock="@p.Quantity">@p.Name - $@p.Price
+                                        (Stock: @p.Quantity)</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" id="quantityInput" class="form-control" placeholder="Cantidad" min="1"
+                            value="1">
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" id="addProductBtn" class="btn btn-success w-100">Agregar</button>
+                    </div>
+                </div>
+
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered" id="productsTable">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio Unit.</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamic rows here -->
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="text-end fw-bold">Total:</td>
+                                <td colspan="2" class="fw-bold" id="totalAmount">$0.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">Registrar Venta</button>
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const products = [];
+        const productSelect = document.getElementById('productSelect');
+        const quantityInput = document.getElementById('quantityInput');
+        const productsTable = document.getElementById('productsTable').querySelector('tbody');
+        const totalAmountSpan = document.getElementById('totalAmount');
+        const saleForm = document.getElementById('saleForm');
+
+        document.getElementById('addProductBtn').addEventListener('click', () => {
+            const productId = productSelect.value;
+            const productName = productSelect.options[productSelect.selectedIndex].text;
+            const price = parseFloat(productSelect.options[productSelect.selectedIndex].dataset.price);
+            const stock = parseInt(productSelect.options[productSelect.selectedIndex].dataset.stock);
+            const quantity = parseInt(quantityInput.value);
+
+            if (!productId || quantity <= 0) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Atención',
+                    text: 'Seleccione un producto y una cantidad válida.',
+                    confirmButtonColor: '#0d6efd'
+                });
+                return;
+            }
+
+            if (quantity > stock) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Stock Insuficiente',
+                    text: `Solo hay ${stock} unidades disponibles.`,
+                    confirmButtonColor: '#dc3545'
+                });
+                return;
+            }
+
+            const existing = products.find(p => p.productId === productId);
+            if (existing) {
+                if (existing.quantity + quantity > stock) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Stock Insuficiente',
+                        text: `Total en carrito: ${existing.quantity}. Disponible: ${stock}.`,
+                        confirmButtonColor: '#dc3545'
+                    });
+                    return;
+                }
+                existing.quantity += quantity;
+            } else {
+                products.push({ productId, productName, price, quantity });
+            }
+
+            renderTable();
+            productSelect.value = '';
+            quantityInput.value = 1;
+        });
+
+        function renderTable() {
+            productsTable.innerHTML = '';
+            let total = 0;
+
+            products.forEach((p, index) => {
+                const subtotal = p.price * p.quantity;
+                total += subtotal;
+
+                const row = `
+                        <tr>
+                            <td>${p.productName}</td>
+                            <td>$${p.price.toFixed(2)}</td>
+                            <td>${p.quantity}</td>
+                            <td>$${subtotal.toFixed(2)}</td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-danger" onclick="removeProduct(${index})">X</button>
+                            </td>
+                        </tr>
+                    `;
+                productsTable.innerHTML += row;
+            });
+
+            totalAmountSpan.textContent = `$${total.toFixed(2)}`;
+        }
+
+        window.removeProduct = (index) => {
+            products.splice(index, 1);
+            renderTable();
+        };
+
+        saleForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const userId = document.getElementById('UserId').value;
+            if (!userId) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Falta Cliente',
+                    text: 'Por favor seleccione un cliente.',
+                    confirmButtonColor: '#0d6efd'
+                });
+                return;
+            }
+
+            if (products.length === 0) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Carrito Vacío',
+                    text: 'Agregue al menos un producto a la venta.',
+                    confirmButtonColor: '#0d6efd'
+                });
+                return;
+            }
+
+            const data = {
+                userId: userId,
+                items: products.map(p => ({ productId: parseInt(p.productId), quantity: p.quantity }))
+            };
+
+            try {
+                // Show loading state
+                Swal.fire({
+                    title: 'Procesando...',
+                    text: 'Registrando la venta',
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                const response = await fetch('@Url.Action("Create", "Sale")', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    await Swal.fire({
+                        icon: 'success',
+                        title: '¡Venta Registrada!',
+                        text: 'La venta se ha guardado correctamente.',
+                        confirmButtonColor: '#198754'
+                    });
+                    window.location.href = result.redirectUrl;
+                } else {
+                    const error = await response.json();
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: error.message || 'No se pudo registrar la venta.',
+                        confirmButtonColor: '#dc3545'
+                    });
+                }
+            } catch (err) {
+                console.error(err);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error de Conexión',
+                    text: 'No se pudo conectar con el servidor.',
+                    confirmButtonColor: '#dc3545'
+                });
+            }
+        });
+    </script>
+}
