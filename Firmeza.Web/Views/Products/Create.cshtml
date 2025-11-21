@@ -18,29 +18,25 @@
                 <div class="row g-3">
                     <div class="col-12">
                         <label asp-for="Name" class="form-label fw-semibold text-secondary">Nombre del producto</label>
-                        <input asp-for="Name" class="form-control border-warning border-opacity-50 rounded-3 shadow-sm"
-                               placeholder="Ej. Martillo de acero, Taladro Bosch..." />
+                        <input asp-for="Name" class="form-control border-warning shadow-sm rounded-3" placeholder="Ej. Martillo de acero, Taladro Bosch..." />
                         <span asp-validation-for="Name" class="text-danger small"></span>
                     </div>
 
                     <div class="col-md-6">
                         <label asp-for="Price" class="form-label fw-semibold text-secondary">Precio</label>
-                        <input asp-for="Price" class="form-control border-warning border-opacity-50 rounded-3 shadow-sm"
-                               placeholder="Ej. 39.99" />
+                        <input asp-for="Price" class="form-control border-warning shadow-sm rounded-3" placeholder="Ej. 39.99" />
                         <span asp-validation-for="Price" class="text-danger small"></span>
                     </div>
 
                     <div class="col-md-6">
                         <label asp-for="Quantity" class="form-label fw-semibold text-secondary">Cantidad</label>
-                        <input asp-for="Quantity" class="form-control border-warning border-opacity-50 rounded-3 shadow-sm"
-                               placeholder="Ej. 10" />
+                        <input asp-for="Quantity" class="form-control border-warning shadow-sm rounded-3" placeholder="Ej. 10" />
                         <span asp-validation-for="Quantity" class="text-danger small"></span>
                     </div>
 
                     <div class="col-12">
                         <label asp-for="Category" class="form-label fw-semibold text-secondary">Categoría</label>
-                        <input asp-for="Category" class="form-control border-warning border-opacity-50 rounded-3 shadow-sm"
-                               placeholder="Ej. Herramientas manuales, eléctricos, pintura..." />
+                        <input asp-for="Category" class="form-control border-warning shadow-sm rounded-3" placeholder="Ej. Herramientas manuales, eléctricos, pintura..." />
                         <span asp-validation-for="Category" class="text-danger small"></span>
                     </div>
                 </div>
@@ -57,7 +53,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
