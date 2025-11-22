@@ -1,0 +1,165 @@
+#############################
+#   Build / Publish Output  #
+#############################
+bin/
+obj/
+out/
+artifacts/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+*.tmp
+*.db
+*.bak
+
+# ASP.NET temporary files
+*.mdb
+*.ldb
+*.ldf
+*.mdf
+*.ndf
+
+###################################
+#   Secrets / Settings / Keys     #
+###################################
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+secrets.json
+*.user
+*.suo
+
+# Sensitive config
+.env
+*.env
+.env.*
+.envrc
+
+###################################
+#     Entity Framework Migrations #
+###################################
+# (Si quieres versionar solo las migraciones finales, descomenta)
+# Migrations/*ModelSnapshot.cs
+
+###################################
+#        Logs / Traces            #
+###################################
+logs/
+*.log
+LOGS/
+error.log
+
+###################################
+#        OS Generated Files       #
+###################################
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+._*
+
+# Linux
+*~
+
+###################################
+#         IDE / Editors           #
+###################################
+
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# Visual Studio
+.vs/
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+###################################
+#            NuGet                #
+###################################
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+*.nuspec
+*.psmdcp
+
+###################################
+#         Test Results            #
+###################################
+TestResults/
+*.coverage
+*.coveragexml
+*.testsettings
+.trx
+
+###################################
+#           Docker                #
+###################################
+docker-compose.override.yml
+docker-compose.*.yml
+*.tgz
+
+###################################
+#        Front-end Assets         #
+###################################
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
+*.map
+
+###################################
+#         Temporary Files         #
+###################################
+*.tmp
+*.temp
+*.swp
+*.swo
+*.orig
+*.old
+*.save
+*.patch
+
+###################################
+#       Resharper / Tools         #
+###################################
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+###################################
+#           Others                #
+###################################
+*.sqlite
+*.sqlite3
+*.db-wal
+*.db-shm
+
+*.pid
+
+# Compiled views (Razor)
+*.cshtml.g.cs
+
+# Publish profiles
+Properties/PublishProfiles/
+
+# JetBrains caches
+.idea/
+*.iml

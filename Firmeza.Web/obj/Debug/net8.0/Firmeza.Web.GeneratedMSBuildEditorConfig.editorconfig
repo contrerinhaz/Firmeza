@@ -17,123 +17,123 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Firmeza.Web
 build_property.RootNamespace = Firmeza.Web
-build_property.ProjectDir = /home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/
+build_property.ProjectDir = /home/Coder/Escritorio/Firmeza/Firmeza.Web/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web
+build_property.MSBuildProjectDirectory = /home/Coder/Escritorio/Firmeza/Firmeza.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Account/Login.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Excel/Upload.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Excel/Upload.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXhjZWwvVXBsb2FkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Home/Privacy.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Products/Create.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Products/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdHMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Products/Delete.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Products/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdHMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Products/Details.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Products/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdHMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Products/Edit.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Products/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdHMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Products/Index.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Sale/Create.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Sale/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZS9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Sale/Delete.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Sale/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZS9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Sale/Details.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Sale/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZS9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Sale/Edit.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Sale/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZS9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Sale/Index.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Sale/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/SaleDetails/Create.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/SaleDetails/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZURldGFpbHMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/SaleDetails/Delete.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/SaleDetails/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZURldGFpbHMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/SaleDetails/Details.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/SaleDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZURldGFpbHMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/SaleDetails/Edit.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/SaleDetails/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZURldGFpbHMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/SaleDetails/Index.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/SaleDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2FsZURldGFpbHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Shared/Error.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Users/Create.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Users/Delete.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Users/Details.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Users/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Users/Edit.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Users/Index.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlcnMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/_ViewImports.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/_ViewStart.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Views/Shared/_Layout.cshtml]
+[/home/Coder/Escritorio/Firmeza/Firmeza.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-qptsuf92ns

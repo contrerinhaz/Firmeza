@@ -9124,11 +9124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Firmeza.Web.csproj",
+      "projectUniqueName": "/home/Coder/Escritorio/Firmeza/Firmeza.Web/Firmeza.Web.csproj",
       "projectName": "Firmeza.Web",
-      "projectPath": "/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Firmeza.Web.csproj",
+      "projectPath": "/home/Coder/Escritorio/Firmeza/Firmeza.Web/Firmeza.Web.csproj",
       "packagesPath": "/home/Coder/.nuget/packages/",
-      "outputPath": "/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/obj/",
+      "outputPath": "/home/Coder/Escritorio/Firmeza/Firmeza.Web/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/Coder/.nuget/NuGet/NuGet.Config"

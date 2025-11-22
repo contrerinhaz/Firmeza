@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xLjoqoNmPQxYf2ZraU3qxxZ9Rd0Ch8pa4I0y02jeLhTjKKf6DM/ONXvl+jLGLl/ojCTwEOCLhgoUGwpNw6qBVA==",
+  "dgSpecHash": "lf/QONiyu2aBcNoqbJRyHLRDdpduad3cppJx1Th06QGVaqyZdb/OzNf9ay1PhMNVNaDKLCMtH12rLmqStGDxjw==",
   "success": true,
-  "projectFilePath": "/home/Coder/Escritorio/jdcnt/Firmeza/Firmeza.Web/Firmeza.Web.csproj",
+  "projectFilePath": "/home/Coder/Escritorio/Firmeza/Firmeza.Web/Firmeza.Web.csproj",
   "expectedPackageFiles": [
     "/home/Coder/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/Coder/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
