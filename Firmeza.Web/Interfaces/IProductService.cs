@@ -1,5 +1,6 @@
 namespace Firmeza.Web.Interfaces;
 
+using Models;
 using Models.Entities;
 
 public interface IProductService
@@ -9,4 +10,5 @@ public interface IProductService
     Task<bool>CreateProduct(Product product);
     Task<bool>UpdateProduct(Product product);
     Task<bool>DeleteProduct(int id);
+    Task<PaginatedList<Product>> GetPagedProductsAsync(int pageNumber, int pageSize);
 }

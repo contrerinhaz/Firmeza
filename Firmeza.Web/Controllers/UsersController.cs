@@ -21,9 +21,10 @@ public class UsersController : Controller
 
     // GET: Users
     // Lists all registered users
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(int pageNumber = 1)
     {
-        var users = await _service.GetAllAsync();
+        const int pageSize = 10;
+        var users = await _service.GetPagedAsync(pageNumber, pageSize);
         return View(users);
     }
 

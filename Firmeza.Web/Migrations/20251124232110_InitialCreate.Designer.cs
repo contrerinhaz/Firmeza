@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Firmeza.Web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251121215700_FixPrecision")]
-    partial class FixPrecision
+    [Migration("20251124232110_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

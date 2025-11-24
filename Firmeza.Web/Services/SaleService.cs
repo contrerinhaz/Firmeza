@@ -1,4 +1,5 @@
 using Firmeza.Web.Interfaces;
+using Firmeza.Web.Models;
 using Firmeza.Web.Models.Entities;
 
 namespace Firmeza.Web.Services;
@@ -70,5 +71,12 @@ public class SaleService : ISaleService
     public async Task<Sale?> GetSaleByIdAsync(int id)
     {
         return await _saleRepository.GetByIdAsync(id);
+    }
+
+    // Retrieves paginated sales
+    public async Task<PaginatedList<Sale>> GetPagedSalesAsync(int pageNumber, int pageSize)
+    {
+        var query = await _saleRepository.GetQueryable();
+        return await PaginatedList<Sale>.CreateAsync(query, pageNumber, pageSize);
     }
 }

@@ -1,3 +1,4 @@
+using Firmeza.Web.Models;
 using Firmeza.Web.Models.Entities;
 
 namespace Firmeza.Web.Interfaces
@@ -11,5 +12,6 @@ namespace Firmeza.Web.Interfaces
         Task DeleteAsync(string id);
         Task<bool> ExistsAsync(string id);
         Task CreateWithPasswordAsync(User user, string password, string role);
+        Task<PaginatedList<User>> GetPagedAsync(int pageNumber, int pageSize);
     }
 }

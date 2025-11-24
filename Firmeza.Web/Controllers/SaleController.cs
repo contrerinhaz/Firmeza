@@ -23,9 +23,10 @@ public class SaleController : Controller
 
     // GET: Sale
     // Retrieves and displays a list of all sales
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(int pageNumber = 1)
     {
-        var sales = await _saleService.GetAllSalesAsync();
+        const int pageSize = 10;
+        var sales = await _saleService.GetPagedSalesAsync(pageNumber, pageSize);
         return View(sales);
     }
 

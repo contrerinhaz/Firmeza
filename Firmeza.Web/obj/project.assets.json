@@ -9119,19 +9119,19 @@
     ]
   },
   "packageFolders": {
-    "/home/Coder/.nuget/packages/": {}
+    "C:\\Users\\contreras\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/Coder/Escritorio/Firmeza/Firmeza.Web/Firmeza.Web.csproj",
+      "projectUniqueName": "C:\\datos cont sistema\\Documents\\Desktop\\juan\\riwi proyectos\\proyectos\\Firmeza\\Firmeza.Web\\Firmeza.Web.csproj",
       "projectName": "Firmeza.Web",
-      "projectPath": "/home/Coder/Escritorio/Firmeza/Firmeza.Web/Firmeza.Web.csproj",
-      "packagesPath": "/home/Coder/.nuget/packages/",
-      "outputPath": "/home/Coder/Escritorio/Firmeza/Firmeza.Web/obj/",
+      "projectPath": "C:\\datos cont sistema\\Documents\\Desktop\\juan\\riwi proyectos\\proyectos\\Firmeza\\Firmeza.Web\\Firmeza.Web.csproj",
+      "packagesPath": "C:\\Users\\contreras\\.nuget\\packages\\",
+      "outputPath": "C:\\datos cont sistema\\Documents\\Desktop\\juan\\riwi proyectos\\proyectos\\Firmeza\\Firmeza.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/Coder/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\contreras\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -9149,7 +9149,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -9215,6 +9221,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -9223,7 +9247,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

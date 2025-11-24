@@ -1,6 +1,7 @@
 namespace Firmeza.Web.Services;
 
 using Interfaces;
+using Models;
 using Models.Entities;
 
 // Service for managing product business logic
@@ -56,5 +57,12 @@ public class ProductService : IProductService
     {
         if (id <= 0) return Task.FromResult(false);
         return _productRepository.Delete(id);
+    }
+
+    // Retrieves paginated products
+    public async Task<PaginatedList<Product>> GetPagedProductsAsync(int pageNumber, int pageSize)
+    {
+        var query = await _productRepository.GetQueryable();
+        return await PaginatedList<Product>.CreateAsync(query, pageNumber, pageSize);
     }
 }

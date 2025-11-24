@@ -89,4 +89,10 @@ public class ProductRepository : IProductRepository
         }
 
     }
+
+    // Returns queryable for pagination
+    public async Task<IQueryable<Product>> GetQueryable()
+    {
+        return _context.Product.OrderBy(p => p.Name);
+    }
 }
