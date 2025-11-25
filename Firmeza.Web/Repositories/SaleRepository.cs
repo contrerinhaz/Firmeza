@@ -40,4 +40,14 @@ public class SaleRepository : ISaleRepository
             .ThenInclude(sd => sd.Product)
             .FirstOrDefaultAsync(s => s.Id == id);
     }
+
+    // Returns queryable for pagination
+    public async Task<IQueryable<Sale>> GetQueryable()
+    {
+        return _context.Sales
+            .Include(s => s.User)
+            .Include(s => s.SaleDetails!)
+            .ThenInclude(sd => sd.Product)
+            .OrderByDescending(s => s.Date);
+    }
 }

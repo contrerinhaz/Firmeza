@@ -9,5 +9,6 @@ public interface IProductRepository
     Task<bool> Create(Product product);
     Task<bool> Update(Product product);
     Task<bool> Delete(int id);
+    Task<IQueryable<Product>> GetQueryable();
     
 }

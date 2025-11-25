@@ -19,9 +19,10 @@ public class ProductsController : Controller
     }
 
     // Lists all products available in the system
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(int pageNumber = 1)
     {
-        var products = await _productService.GetAllProducts();
+        const int pageSize = 10;
+        var products = await _productService.GetPagedProductsAsync(pageNumber, pageSize);
         return View(products);
     }
 

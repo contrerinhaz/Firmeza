@@ -52,5 +52,11 @@ namespace Firmeza.Web.Repositories
         {
             return await _context.Users.AnyAsync(u => u.Id == id);
         }
+
+        // Returns queryable for pagination
+        public async Task<IQueryable<User>> GetQueryable()
+        {
+            return _context.Users.OrderBy(u => u.FullName);
+        }
     }
 }

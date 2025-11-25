@@ -1,4 +1,5 @@
 using Firmeza.Web.Interfaces;
+using Firmeza.Web.Models;
 using Firmeza.Web.Models.Entities;
 using Microsoft.AspNetCore.Identity;
 
@@ -53,6 +54,13 @@ namespace Firmeza.Web.Services
                 await _roleManager.CreateAsync(new IdentityRole(role));
 
             await _userManager.AddToRoleAsync(user, role);
+        }
+
+        // Retrieves paginated users
+        public async Task<PaginatedList<User>> GetPagedAsync(int pageNumber, int pageSize)
+        {
+            var query = await _repo.GetQueryable();
+            return await PaginatedList<User>.CreateAsync(query, pageNumber, pageSize);
         }
     }
 }

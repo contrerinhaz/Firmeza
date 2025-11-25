@@ -1,4 +1,4 @@
-@model IEnumerable<Firmeza.Web.Models.Entities.Sale>
+@model Firmeza.Web.Models.PaginatedList<Firmeza.Web.Models.Entities.Sale>
 
 @{
     ViewData["Title"] = "Ventas";
@@ -41,7 +41,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if (!Model.Any())
+                    @if (!Model.Items.Any())
                     {
                         <tr>
                             <td colspan="6" class="text-center py-5 text-muted">
@@ -54,7 +54,7 @@
                     }
                     else
                     {
-                        foreach (var item in Model)
+                        foreach (var item in Model.Items)
                         {
                             <tr>
                                 <td class="text-muted small ps-4">@item.Date.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
@@ -99,4 +99,36 @@
             </table>
         </div>
     </div>
+    @if (Model.TotalPages > 1)
+    {
+        <div class="card-footer bg-light">
+            <nav aria-label="Paginación de ventas">
+                <ul class="pagination pagination-sm mb-0 justify-content-center">
+                    <li class="page-item @(!Model.HasPreviousPage ? "disabled" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-pageNumber="@(Model.PageIndex - 1)">
+                            <i class="fas fa-chevron-left"></i> Anterior
+                        </a>
+                    </li>
+                    
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                            <a class="page-link" asp-action="Index" asp-route-pageNumber="@i">@i</a>
+                        </li>
+                    }
+                    
+                    <li class="page-item @(!Model.HasNextPage ? "disabled" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-pageNumber="@(Model.PageIndex + 1)">
+                            Siguiente <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="text-center mt-2">
+                <small class="text-muted">
+                    Página @Model.PageIndex de @Model.TotalPages (@Model.TotalCount ventas en total)
+                </small>
+            </div>
+        </div>
+    }
 </div>
