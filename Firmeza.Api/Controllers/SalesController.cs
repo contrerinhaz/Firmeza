@@ -60,6 +60,33 @@ public class SalesController : ControllerBase
             decimal total = 0;
             var saleDetails = new List<SaleDetail>();
 
+            // Validate User
+            if (string.IsNullOrEmpty(model.UserId) && string.IsNullOrEmpty(model.UserName))
+            {
+                return BadRequest(new { message = "Either UserId or UserName must be provided." });
+            }
+
+            string userId = model.UserId;
+            User? user = null;
+
+            if (!string.IsNullOrEmpty(userId))
+            {
+                user = await _userRepository.GetByIdAsync(userId);
+            }
+            else if (!string.IsNullOrEmpty(model.UserName))
+            {
+                user = await _userRepository.GetByNameAsync(model.UserName);
+                if (user != null)
+                {
+                    userId = user.Id;
+                }
+            }
+
+            if (user == null)
+            {
+                return BadRequest(new { message = "User not found." });
+            }
+
             foreach (var detail in model.Details)
             {
                 var product = await _productRepository.GetById(detail.ProductId);
@@ -86,7 +113,7 @@ public class SalesController : ControllerBase
 
             var sale = new Sale
             {
-                UserId = model.UserId,
+                UserId = userId,
                 Date = DateTime.UtcNow,
                 Total = total,
                 Vat = total * 0.19m, // 19% VAT
@@ -98,7 +125,7 @@ public class SalesController : ControllerBase
             // Send Email Confirmation
             try
             {
-                var user = await _userRepository.GetByIdAsync(model.UserId);
+                // User is already retrieved above
                 if (user != null && !string.IsNullOrEmpty(user.Email))
                 {
                     var subject = $"Confirmación de Compra - Orden #{sale.Id}";

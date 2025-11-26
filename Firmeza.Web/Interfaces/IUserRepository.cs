@@ -10,6 +10,7 @@ namespace Firmeza.Web.Interfaces
         Task UpdateAsync(User user);
         Task DeleteAsync(User user);
         Task<bool> ExistsAsync(string id);
+        Task<User?> GetByNameAsync(string name);
         Task<IQueryable<User>> GetQueryable();
     }
 }

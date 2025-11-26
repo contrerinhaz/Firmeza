@@ -12,7 +12,8 @@ public class SaleDto
 
 public class CreateSaleDto
 {
-    public required string UserId { get; set; }
+    public string? UserId { get; set; }
+    public string? UserName { get; set; }
     public required List<CreateSaleDetailDto> Details { get; set; }
 }
 

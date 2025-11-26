@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Firmeza.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da6bec78b6cd3e94a8bfe44cc68866958fee922e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cffe8871c9a09f0298a76f493f840d2b89ff7433")]
 [assembly: System.Reflection.AssemblyProductAttribute("Firmeza.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Firmeza.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
