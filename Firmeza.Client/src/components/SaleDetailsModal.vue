@@ -1,11 +1,11 @@
 <template>
   <transition name="modal-fade">
-    <div v-if="show" class="fixed inset-0 z-[70] flex items-center justify-center p-4">
-      <!-- Backdrop -->
-      <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" @click="close"></div>
+    <div v-if="show" class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+      <!-- Backdrop with lighter glass effect -->
+      <div class="absolute inset-0 bg-slate-900/30 backdrop-blur-md transition-opacity" @click="close"></div>
       
       <!-- Modal Content -->
-      <div class="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden flex flex-col max-h-[90vh] transform transition-all scale-100">
+      <div class="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden flex flex-col max-h-[85vh] transform transition-all scale-100 my-auto">
         
         <!-- Header with Glass Effect -->
         <div class="relative bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 p-8 text-white shrink-0 overflow-hidden">

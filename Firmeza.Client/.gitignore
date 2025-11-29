@@ -1,130 +1,81 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+## ============================================================================
+## Vue.js / Vite / Node - Professional Gitignore
+## ============================================================================
 
-# dependencies
-/node_modules
-/.pnp
+# --- Dependencies ---
+node_modules/
+.pnp
 .pnp.js
 
-# testing
-/coverage
+# --- Build Output ---
+dist/
+dist-ssr/
+build/
+out/
+.output/
 
-# production
-/dist
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-# local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# --- Environment Variables (CRITICAL) ---
 .env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+# Allow example file
+!*.example
 
-# vercel
-.vercel
+# --- Testing ---
+coverage/
+.nyc_output/
+reports/
+junit.xml
+test-results/
+cypress/videos/
+cypress/screenshots/
+__tests__/__snapshots__/
 
-# typescript
-*.tsbuildinfo
-
-# vite
-dist-ssr
-*.local
-
-# Editor directories and files
+# --- IDEs & Editors ---
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-# Operating System Files
+# --- Logs ---
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- System Files ---
 .DS_Store
 .DS_Store?
 ._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
+ehthumbs.db
+desktop.ini
 
-# IDEs
-.idea/
-*.iml
-*.iws
-.vscode/
-*.sublime-project
-*.sublime-workspace
-
-# Logs
-logs
-*.log
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
+# --- Cache ---
 .eslintcache
-
-# Output of 'npm pack'
-*.tgz
-
-# Yarn
-.yarn-integrity
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-.parcel-cache
-
-# Next.js build output
-.next
-out
-
-# Nuxt.js build / generate output
-.nuxt
-dist
-
-# Gatsby files
+.stylelintcache
+.prettiercache
 .cache/
+.parcel-cache/
+.vite/
+.vuepress/dist
 
-# Comment in the public line in if your project uses Gatsby and not Next.js
-# public
+# --- TypeScript ---
+*.tsbuildinfo
 
-# Storybook build outputs
-.out
-.storybook-out
-storybook-static
-
-# Temporary folders
-tmp/
-temp/
-
-# Package manager lock files (choose one strategy)
-# Keep package-lock.json for npm users:
-# package-lock.json
-# Keep yarn.lock for yarn users:
-# yarn.lock
-# Keep pnpm-lock.yaml for pnpm users:
-# pnpm-lock.yaml
+# --- Package Managers ---
+# Keep lockfiles! (package-lock.json, yarn.lock, pnpm-lock.yaml)
+# But ignore potential error logs
