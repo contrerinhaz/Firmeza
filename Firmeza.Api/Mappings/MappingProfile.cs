@@ -19,5 +19,8 @@ public class MappingProfile : Profile
         // Sale mappings
         CreateMap<Sale, SaleDto>()
             .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User != null ? src.User.FullName : null));
+
+        CreateMap<SaleDetail, SaleDetailDto>()
+            .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product != null ? src.Product.Name : null));
     }
 }

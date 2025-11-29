@@ -25,8 +25,8 @@ public class SaleDetail
     public int Quantity { get; set; }
 
     [Required(ErrorMessage = "Unit price is required.")]
-    [Column(TypeName = "decimal(10,2)")]
-    [Range(0.01, 999999.99, ErrorMessage = "Unit price must be greater than 0.")]
+    [Column(TypeName = "decimal(18,2)")]
+    [Range(0.01, 999999999999999.99, ErrorMessage = "Unit price must be greater than 0.")]
     public decimal UnitPrice { get; set; }
 
     [NotMapped]

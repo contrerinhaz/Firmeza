@@ -49,6 +49,19 @@ public class SalesController : ControllerBase
         return Ok(saleDto);
     }
 
+    [HttpGet("user/{email}")]
+    public async Task<IActionResult> GetByUserEmail(string email)
+    {
+        var user = await _userRepository.GetByEmailAsync(email);
+        if (user == null)
+            return NotFound(new { message = "User not found" });
+
+        var sales = await _saleRepository.GetAllAsync();
+        var userSales = sales.Where(s => s.UserId == user.Id).ToList();
+        var saleDtos = _mapper.Map<IEnumerable<SaleDto>>(userSales);
+        return Ok(saleDtos);
+    }
+
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateSaleDto model)
     {
@@ -60,32 +73,14 @@ public class SalesController : ControllerBase
             decimal total = 0;
             var saleDetails = new List<SaleDetail>();
 
-            // Validate User
-            if (string.IsNullOrEmpty(model.UserId) && string.IsNullOrEmpty(model.UserName))
-            {
-                return BadRequest(new { message = "Either UserId or UserName must be provided." });
-            }
-
-            string userId = model.UserId;
-            User? user = null;
-
-            if (!string.IsNullOrEmpty(userId))
-            {
-                user = await _userRepository.GetByIdAsync(userId);
-            }
-            else if (!string.IsNullOrEmpty(model.UserName))
-            {
-                user = await _userRepository.GetByNameAsync(model.UserName);
-                if (user != null)
-                {
-                    userId = user.Id;
-                }
-            }
-
+            // Validate User - UserName from frontend is actually the email
+            var user = await _userRepository.GetByEmailAsync(model.UserName);
             if (user == null)
             {
-                return BadRequest(new { message = "User not found." });
+                return BadRequest(new { message = $"User with email '{model.UserName}' not found." });
             }
+
+            string userId = user.Id;
 
             foreach (var detail in model.Details)
             {
@@ -125,21 +120,30 @@ public class SalesController : ControllerBase
             // Send Email Confirmation
             try
             {
-                // User is already retrieved above
                 if (user != null && !string.IsNullOrEmpty(user.Email))
                 {
-                    var subject = $"Confirmación de Compra - Orden #{sale.Id}";
-                    var body = $@"
-                        <h1>Gracias por tu compra, {user.FullName}!</h1>
-                        <p>Tu orden <strong>#{sale.Id}</strong> ha sido registrada exitosamente.</p>
-                        <p><strong>Fecha:</strong> {sale.Date}</p>
-                        <p><strong>Total:</strong> {sale.Total:C}</p>
-                        <h3>Detalles:</h3>
-                        <ul>
-                            {string.Join("", saleDetails.Select(d => $"<li>Producto ID: {d.ProductId} - Cantidad: {d.Quantity} - Subtotal: {d.Subtotal:C}</li>"))}
-                        </ul>
-                        <p>Gracias por preferirnos.</p>
-                    ";
+                    // Prepare product items for email
+                    var emailItems = new List<(string productName, int quantity, decimal unitPrice, decimal subtotal)>();
+                    foreach (var detail in saleDetails)
+                    {
+                        var product = await _productRepository.GetById(detail.ProductId);
+                        emailItems.Add((
+                            product?.Name ?? "Producto",
+                            detail.Quantity,
+                            detail.UnitPrice,
+                            detail.Subtotal
+                        ));
+                    }
+
+                    var subject = $"✅ Confirmación de Compra - Orden #{sale.Id}";
+                    var body = _emailService.GeneratePurchaseReceipt(
+                        user.FullName,
+                        sale.Id,
+                        sale.Date,
+                        sale.Total,
+                        sale.Vat,
+                        emailItems
+                    );
 
                     await _emailService.SendEmailAsync(user.Email, subject, body);
                 }
@@ -147,7 +151,7 @@ public class SalesController : ControllerBase
             catch (Exception emailEx)
             {
                 // Log email error but don't fail the request
-                Console.WriteLine($"Error sending email: {emailEx.Message}");
+                Console.WriteLine($"⚠️  Error sending email: {emailEx.Message}");
             }
 
             var saleDto = _mapper.Map<SaleDto>(sale);

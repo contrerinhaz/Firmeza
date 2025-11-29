@@ -11,6 +11,7 @@ namespace Firmeza.Web.Interfaces
         Task DeleteAsync(User user);
         Task<bool> ExistsAsync(string id);
         Task<User?> GetByNameAsync(string name);
+        Task<User?> GetByEmailAsync(string email);
         Task<IQueryable<User>> GetQueryable();
     }
 }

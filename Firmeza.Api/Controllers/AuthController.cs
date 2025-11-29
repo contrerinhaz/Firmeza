@@ -77,6 +77,7 @@ public class AuthController : ControllerBase
             user = new
             {
                 user.Id,
+                username = user.UserName,
                 user.Email,
                 user.FullName,
                 roles = roles.ToList()
@@ -101,7 +102,8 @@ public class AuthController : ControllerBase
             claims.Add(new Claim(ClaimTypes.Role, role));
         }
 
-        var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]));
+        var jwtKey = _configuration["Jwt:Key"] ?? throw new InvalidOperationException("Jwt:Key is missing in configuration.");
+        var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtKey));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var token = new JwtSecurityToken(
