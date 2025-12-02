@@ -83,9 +83,17 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
                 </svg>
               </button>
-              <span class="px-4 py-2 font-bold text-slate-700 min-w-[3rem] text-center">
-                {{ item.quantity }}
-              </span>
+              <input
+                type="number"
+                min="1"
+                :value="item.quantity"
+                @change="(e) => {
+                  const val = parseInt(e.target.value);
+                  if (val > 0) cartStore.updateQuantity(item.id, val);
+                  else e.target.value = item.quantity;
+                }"
+                class="w-16 px-0 py-2 font-bold text-slate-700 text-center bg-transparent border-none focus:ring-0 appearance-none [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
+              />
               <button
                 @click="cartStore.updateQuantity(item.id, item.quantity + 1)"
                 class="px-3 py-2 text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
