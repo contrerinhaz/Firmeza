@@ -1,5 +1,4 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
@@ -11,11 +10,11 @@ COPY ["Firmeza.Web/Firmeza.Web.csproj", "Firmeza.Web/"]
 RUN dotnet restore "Firmeza.Web/Firmeza.Web.csproj"
 COPY . .
 WORKDIR "/src/Firmeza.Web"
-RUN dotnet build "./Firmeza.Web.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "Firmeza.Web.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Firmeza.Web.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Firmeza.Web.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

@@ -1,0 +1,32 @@
+services:
+  firmeza.web:
+    image: firmeza.web
+    build:
+      context: .
+      dockerfile: Firmeza.Web/Dockerfile
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  firmeza.api:
+    image: firmeza.api
+    build:
+      context: .
+      dockerfile: Firmeza.Api/Dockerfile
+    ports:
+      - "5001:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - firmeza.web
+
+  firmeza.client:
+    image: firmeza.client
+    build:
+      context: ./Firmeza.Client
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - firmeza.api
